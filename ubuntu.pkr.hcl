@@ -9,9 +9,9 @@ packer {
 
 source "qemu" "ubuntu" {
   accelerator       = "kvm"
-
+  disk_image        = true
   iso_url           = "https://cloud-images.ubuntu.com/releases/24.04/release/ubuntu-24.04-server-cloudimg-amd64.img"
-  iso_checksum      = "sha256:4d602318cf14591ae9f8350582ce006a8e8f81014a682ac192c01994a50d2f83"
+  iso_checksum      = "sha256:834af9cd766d1fd86eca156db7dff34c3713fbbc7f5507a3269be2a72d2d1820"
   output_directory  = "output-ubuntu"
   format            = "qcow2"
   memory            = 2048
@@ -23,11 +23,11 @@ source "qemu" "ubuntu" {
   net_device        = "virtio-net"
   headless          = true
 
-  http_directory    = "http"
-  cd_files = ["./user-data", "./meta-data"]
+  cd_files = ["./cloud-init/user-data", "./cloud-init/meta-data"]
   cd_label = "CIDATA"
 
   qemuargs = [
+    ["-boot", "c"],
     ["-serial", "file:serial.log"]
   ]
 }
