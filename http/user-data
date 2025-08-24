@@ -1,0 +1,6 @@
+#cloud-config
+users:
+  - name: root
+    shell: /bin/bash
+    ssh_authorized_keys: []
+    plain_text_password: password
