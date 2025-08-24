@@ -23,7 +23,7 @@ source "qemu" "ubuntu" {
   net_device        = "virtio-net"
   headless          = true
 
-  cd_files = ["./cloud-init/user-data", "./cloud-init/meta-data"]
+  cd_files = ["./ubuntu/cloud-init/user-data", "./ubuntu/cloud-init/meta-data"]
   cd_label = "CIDATA"
 
   qemuargs = [

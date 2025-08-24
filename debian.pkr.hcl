@@ -19,7 +19,7 @@ source "qemu" "debian" {
   ssh_password      = "password"
   ssh_wait_timeout  = "30m"
   headless          = true
-  http_directory    = "http"
+  http_directory    = "debian/http"
   boot_command = [
     "<esc><wait>",
     "install auto=true priority=critical preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg console=ttyS0,115200n8 <enter>"
