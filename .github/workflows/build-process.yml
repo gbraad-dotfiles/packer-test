@@ -11,15 +11,10 @@ jobs:
   build-fedora:
     uses: ./.github/workflows/reusable-packer-build-diskimage.yml
     with:
-      target: fedora
+      target: centos
 
-  build-debian:
+  build-fedora:
     uses: ./.github/workflows/reusable-packer-build-diskimage.yml
     with:
-      target: debian
-
-  build-ubuntu:
-    uses: ./.github/workflows/reusable-packer-build-diskimage.yml
-    with:
-      target: ubuntu
+      target: almalinux
 
