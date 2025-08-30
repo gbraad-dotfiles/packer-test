@@ -8,12 +8,12 @@ on:
 
 
 jobs:
-  build-fedora:
+  build-centos:
     uses: ./.github/workflows/reusable-packer-build-diskimage.yml
     with:
       target: centos
 
-  build-fedora:
+  build-alma:
     uses: ./.github/workflows/reusable-packer-build-diskimage.yml
     with:
       target: almalinux
