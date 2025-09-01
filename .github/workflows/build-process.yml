@@ -8,13 +8,8 @@ on:
 
 
 jobs:
-  build-centos:
+  build-alpine:
     uses: ./.github/workflows/reusable-packer-build-diskimage.yml
     with:
-      target: centos
-
-  build-alma:
-    uses: ./.github/workflows/reusable-packer-build-diskimage.yml
-    with:
-      target: almalinux
+      target: alpine
 
